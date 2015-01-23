@@ -6,6 +6,18 @@ Pâté is a simple XPath-oriented, express-compatible template engine for Node.j
 
     npm install node-pate --save
 
+# Dependencies
+
+Pâté depends on [libxmljs](https://github.com/polotek/libxmljs), thus compilation is needed via [node-gyp](https://github.com/TooTallNate/node-gyp)
+
+Dependencies [source](https://github.com/TooTallNate/node-gyp#installation):
+- **Python**
+    - Unix: Python v2.7
+    - Windows: [v2.7.3](http://www.python.org/download/releases/2.7.3#download)
+- **C/C++ Compiler**
+    - Unix: GCC
+    - Windows: [Visual Studio C++ 2010 Express](http://go.microsoft.com/?linkid=9709949)
+
 # Basic usage
 
     var pate = require('node-pate');
@@ -37,4 +49,4 @@ https://github.com/dnewcome/jath
 
 # License
 
-Pate is provided under the MIT free software license. See the file LICENSE for the full text.
+Pâté is provided under the MIT free software license. See the file LICENSE for the full text.

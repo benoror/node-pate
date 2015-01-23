@@ -1,10 +1,6 @@
 var fs = require('fs');
 var libxmljs = require('libxmljs');
 
-//var xmlDataFile = 'labels.xml';
-//var xpath = "/*/*/*"; // ToDo: Support Namespaces
-//var templateFile = 'template.txt';
-
 /**
  * Parse XPath template
  * 
@@ -28,7 +24,7 @@ exports.parse = function parse(tpl, xml, xpath, callback) {
 
 			var splited = token.trim().split('/');
 			var retVal = el.get(splited[0]);
-			
+
 			if(splited.length < 2) {
 				retVal = retVal.text();
 			}
