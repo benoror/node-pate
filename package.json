@@ -1,0 +1,32 @@
+{
+  "name": "node-pate",
+  "version": "0.0.1",
+  "description": "Simple Template Engine for declarative XPath templates",
+  "main": "pate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benoror/node-pate.git"
+  },
+  "keywords": [
+    "xpath",
+    "template",
+    "express",
+    "expressjs",
+    "node",
+    "nodejs",
+    "engine",
+    "html"
+  ],
+  "author": "Benjamin Orozco <benoror@gmail.com> (http://benoror.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benoror/node-pate/issues"
+  },
+  "homepage": "https://github.com/benoror/node-pate",
+  "dependencies": {
+    "libxmljs": "^0.13.0"
+  }
+}

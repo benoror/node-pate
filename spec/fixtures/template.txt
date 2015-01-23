@@ -1,0 +1,3 @@
+LABEL:
+	ID: {{ Nombre/@value }}
+	SEX: {{ IdSexo/@text }}

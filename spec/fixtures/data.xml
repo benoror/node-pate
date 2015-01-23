@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Empleado xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" dbId="Showcase" fullPath="" version="Beta_12" pageSize="10" pageIndex="1" totalRecords="1" Name="Empleado" Schema="dbo" Table_Name="Empleado" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="Id" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="fileTemplate" output="extjs" filtersBehavior="append" debug:tabPanel="10" titleField="Nombre" debug:titleField="11" descriptionField="PrimerApellido" debug:descriptionField="12" iconField="Foto" debug:iconField="13" headerText="Empleado" filters="([Id]=1)" mode="readonly">
+  <px:data xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+    <px:dataRow rowNumber="1" identity="1" primaryValue="1" mode="inherit">
+      <Foto fieldId="ID0EPB" value="nophoto.png" text="nophoto.png" />
+      <Nombre fieldId="ID0EEC" value="Uriel" text="Uriel" />
+      <PrimerApellido fieldId="ID0EXC" value="Gómez" text="Gómez" />
+      <SegundoApellido fieldId="ID0ERD" value="R" text="R" />
+      <FechaIngreso fieldId="ID0EHE" value="2014-11-06 00:00:00" text="06/11/2014" />
+      <IngresoMensual fieldId="ID0EZE" value="500043.00" text="$500,043.000" />
+      <IdSexo fieldId="ID0EJF" value="1" text="Masculino">
+        <Sexo xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E3F" fieldName="IdSexo" sortOrder="1" text="Masculino" value="1" dataText="RTRIM([Sexo])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Sexo" Table_Schema="dbo" Schema="dbo" Table_Name="Sexo" Name="Sexo" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+      </IdSexo>
+      <CiudadNacimiento fieldId="ID0EIG" value="24009" text="MEXICO //Cerro de San Pedro //San Luis Potosí">
+        <Municipio xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2G" fieldName="CiudadNacimiento" sortOrder="1" text="Cerro de San Pedro" value="24009" foreignValue="24" foreignKey="fk" dataText="RTRIM(Municipio)" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Municipio" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="Municipio" Name="Municipio" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append">
+          <Estado sortOrder="24" text="San Luis Potosí" value="24" foreignValue="MX" foreignKey="fk" dataText="RTRIM(Estado)" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Estado" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="Estado" Name="Estado" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append">
+            <Pais sortOrder="151" text="MEXICO" value="MX" dataText="RTRIM(Pais)" dataValue="RTRIM([Clave])" primaryKey="Clave" headerText="Pais" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="Pais" Name="Pais" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </Estado>
+        </Municipio>
+      </CiudadNacimiento>
+      <ViveFueraEnMexico fieldId="ID0ENAAC" value="1" text="1" />
+      <DondeVive fieldId="ID0E3AAC" value="vivefsfsd" text="vivefsfsd" />
+      <PerfilesEmpleados fieldId="ID0EMBAC">
+        <PerfilesEmpleados xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" dbId="Showcase" fullPath="" version="Beta_12" pageSize="0" pageIndex="1" foreignReference="IdEmpleado" Name="PerfilesEmpleados" Schema="dbo" Table_Name="PerfilesEmpleados" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="IdEmpleado,IdPerfil" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText="Perfiles Empleados" filters="([Id]=1)" mode="readonly">
+          <px:data xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+            <px:dataRow rowNumber="1" identity="6" primaryValue="1 3" mode="inherit">
+              <IdPerfil fieldId="ID0EZDAC" value="3" text="Coordinador              ">
+                <Perfil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EGEAC" fieldName="IdPerfil" sortOrder="1" text="Coordinador" value="3" dataText="RTRIM([Perfil])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Perfil" Table_Schema="dbo" Schema="dbo" Table_Name="Perfil" Name="Perfil" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </IdPerfil>
+              <Proyecto fieldId="ID0EUFAC" value="1" text="Horizontes">
+                <Proyecto xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAC" fieldName="Proyecto" sortOrder="1" text="Horizontes" value="1" dataText="RTRIM([Proyecto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Proyecto" Table_Schema="dbo" Schema="dbo" Table_Name="Proyecto" Name="Proyecto" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Proyecto>
+              <Comments fieldId="ID0ENGAC" value="" text="" />
+            </px:dataRow>
+            <px:dataRow rowNumber="2" mode="inherit">
+              <IdPerfil fieldId="ID0EZDAC" value="1" text="Director                 ">
+                <Perfil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EGEAC" fieldName="IdPerfil" sortOrder="1" text="Director" value="1" dataText="RTRIM([Perfil])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Perfil" Table_Schema="dbo" Schema="dbo" Table_Name="Perfil" Name="Perfil" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </IdPerfil>
+              <Proyecto fieldId="ID0EUFAC" value="0" text="- -">
+                <Proyecto xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAC" fieldName="Proyecto" sortOrder="0" text="- -" dataText="RTRIM([Proyecto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Proyecto" Table_Schema="dbo" Schema="dbo" Table_Name="Proyecto" Name="Proyecto" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Proyecto>
+              <Comments fieldId="ID0ENGAC" value="" text="" />
+            </px:dataRow>
+            <px:dataRow rowNumber="3" mode="inherit">
+              <IdPerfil fieldId="ID0EZDAC" value="6" text="Espejo                   ">
+                <Perfil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EGEAC" fieldName="IdPerfil" sortOrder="1" text="Espejo" value="6" dataText="RTRIM([Perfil])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Perfil" Table_Schema="dbo" Schema="dbo" Table_Name="Perfil" Name="Perfil" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </IdPerfil>
+              <Proyecto fieldId="ID0EUFAC" value="0" text="- -">
+                <Proyecto xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAC" fieldName="Proyecto" sortOrder="0" text="- -" dataText="RTRIM([Proyecto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Proyecto" Table_Schema="dbo" Schema="dbo" Table_Name="Proyecto" Name="Proyecto" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Proyecto>
+              <Comments fieldId="ID0ENGAC" value="" text="" />
+            </px:dataRow>
+            <px:dataRow rowNumber="4" mode="inherit">
+              <IdPerfil fieldId="ID0EZDAC" value="7" text="Espejo                   ">
+                <Perfil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EGEAC" fieldName="IdPerfil" sortOrder="1" text="Espejo" value="7" dataText="RTRIM([Perfil])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Perfil" Table_Schema="dbo" Schema="dbo" Table_Name="Perfil" Name="Perfil" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </IdPerfil>
+              <Proyecto fieldId="ID0EUFAC" value="0" text="- -">
+                <Proyecto xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAC" fieldName="Proyecto" sortOrder="0" text="- -" dataText="RTRIM([Proyecto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Proyecto" Table_Schema="dbo" Schema="dbo" Table_Name="Proyecto" Name="Proyecto" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Proyecto>
+              <Comments fieldId="ID0ENGAC" value="" text="" />
+            </px:dataRow>
+            <px:dataRow rowNumber="5" mode="inherit">
+              <IdPerfil fieldId="ID0EZDAC" value="5" text="Líder                    ">
+                <Perfil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EGEAC" fieldName="IdPerfil" sortOrder="1" text="Líder" value="5" dataText="RTRIM([Perfil])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Perfil" Table_Schema="dbo" Schema="dbo" Table_Name="Perfil" Name="Perfil" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </IdPerfil>
+              <Proyecto fieldId="ID0EUFAC" value="0" text="- -">
+                <Proyecto xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAC" fieldName="Proyecto" sortOrder="0" text="- -" dataText="RTRIM([Proyecto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Proyecto" Table_Schema="dbo" Schema="dbo" Table_Name="Proyecto" Name="Proyecto" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Proyecto>
+              <Comments fieldId="ID0ENGAC" value="" text="" />
+            </px:dataRow>
+            <px:dataRow rowNumber="6" mode="inherit">
+              <IdPerfil fieldId="ID0EZDAC" value="4" text="Supervisor               ">
+                <Perfil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EGEAC" fieldName="IdPerfil" sortOrder="1" text="Supervisor" value="4" dataText="RTRIM([Perfil])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Perfil" Table_Schema="dbo" Schema="dbo" Table_Name="Perfil" Name="Perfil" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </IdPerfil>
+              <Proyecto fieldId="ID0EUFAC" value="0" text="- -">
+                <Proyecto xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAC" fieldName="Proyecto" sortOrder="0" text="- -" dataText="RTRIM([Proyecto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Proyecto" Table_Schema="dbo" Schema="dbo" Table_Name="Proyecto" Name="Proyecto" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Proyecto>
+              <Comments fieldId="ID0ENGAC" value="" text="" />
+            </px:dataRow>
+          </px:data>
+        </PerfilesEmpleados>
+      </PerfilesEmpleados>
+      <Logs fieldId="ID0E2GAC">
+        <Logs xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" dbId="Showcase" fullPath="" version="Beta_12" pageSize="0" pageIndex="1" foreignReference="IdEmpleado" Name="Logs" Schema="dbo" Table_Name="Logs" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="Id,IdEmpleado" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText="Logs" filters="([Id]=1)" mode="readonly">
+          <px:data xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+            <px:dataRow rowNumber="1" identity="2" primaryValue="2 1" mode="inherit">
+              <Nombre fieldId="ID0ELJAC" value="Entrada" text="Entrada" />
+              <Descripcion fieldId="ID0EZJAC" value="Entrada al sistema" text="Entrada al sistema" />
+            </px:dataRow>
+            <px:dataRow rowNumber="2" identity="11" primaryValue="11 1" mode="inherit">
+              <Nombre fieldId="ID0ELJAC" value="Reg" text="Reg" />
+              <Descripcion fieldId="ID0EZJAC" value="Reg B" text="Reg B" />
+            </px:dataRow>
+            <px:dataRow rowNumber="3" identity="12" primaryValue="12 1" mode="inherit">
+              <Nombre fieldId="ID0ELJAC" value="Reg" text="Reg" />
+              <Descripcion fieldId="ID0EZJAC" value="Reg B" text="Reg B" />
+            </px:dataRow>
+            <px:dataRow rowNumber="4" identity="16" primaryValue="16 1" mode="inherit">
+              <Nombre fieldId="ID0ELJAC" value="Reg" text="Reg" />
+              <Descripcion fieldId="ID0EZJAC" value="Reg B" text="Reg B" />
+            </px:dataRow>
+            <px:dataRow rowNumber="5" identity="6" primaryValue="6 1" mode="inherit">
+              <Nombre fieldId="ID0ELJAC" value="Registro" text="Registro" />
+              <Descripcion fieldId="ID0EZJAC" value="Registro A" text="Registro A" />
+            </px:dataRow>
+            <px:dataRow rowNumber="6" identity="5" primaryValue="5 1" mode="inherit">
+              <Nombre fieldId="ID0ELJAC" value="Salida" text="Salida" />
+              <Descripcion fieldId="ID0EZJAC" value="Salida del sistema" text="Salida del sistema" />
+            </px:dataRow>
+          </px:data>
+        </Logs>
+      </Logs>
+      <Empleados fieldId="ID0EHKAC">
+        <Empleados xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" dbId="Showcase" fullPath="" version="Beta_12" pageSize="0" pageIndex="1" foreignReference="Empleado" Name="Empleados" Schema="CentrosDeCostos" Table_Name="Empleados" Table_Schema="CentrosDeCostos" Base_Type="TABLE" identityKey="Id" primaryKey="CentroDeCostos,Empleado" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText="Centros De Costos - Empleados" filters="([Id]=1)" mode="readonly">
+          <px:data xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+            <px:dataRow rowNumber="1" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="18" text="Alegra">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Alegra" value="18" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="2" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="14" text="Altavida">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Altavida" value="14" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="3" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="19" text="Bledos">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Bledos" value="19" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="4" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="15" text="Buenaventura">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Buenaventura" value="15" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="5" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="11" text="D Rada">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="D Rada" value="11" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="6" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="3" text="Horizontes">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Horizontes" value="3" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="7" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="16" text="La Campiña">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="La Campiña" value="16" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="8" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="8" text="Novati">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Novati" value="8" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="9" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="9" text="Santa Barbara">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Santa Barbara" value="9" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+            <px:dataRow rowNumber="10" mode="inherit">
+              <CentroDeCostos fieldId="ID0EYLAC" value="17" text="Terracota">
+                <CentroDeCostos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EFMAC" fieldName="CentroDeCostos" sortOrder="1" text="Terracota" value="17" dataText="RTRIM([Nombre])" dataValue="RTRIM([Id])" primaryKey="Id" headerText="Centro De Costos" Table_Schema="CentrosDeCostos" Schema="CentrosDeCostos" Table_Name="CentroDeCostos" Name="CentroDeCostos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </CentroDeCostos>
+            </px:dataRow>
+          </px:data>
+        </Empleados>
+      </Empleados>
+      <Direcciones fieldId="ID0ECAAE" mode="inherit">
+        <Direcciones xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" dbId="Showcase" fullPath="" version="Beta_12" pageSize="0" pageIndex="1" foreignReference="EmpleadoId" Name="Direcciones" Schema="dbo" Table_Name="Direcciones" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="EmpleadoId" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="formView" filtersBehavior="append" headerText="Direcciones" filters="([Id]=1)" mode="readonly">
+          <px:data xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+            <px:dataRow rowNumber="1" identity="1" primaryValue="1" mode="inherit">
+              <Calle fieldId="ID0EOCAE" value="laescondida12" text="laescondida12" />
+              <Numero fieldId="ID0E1CAE" value="204" text="204" />
+            </px:dataRow>
+          </px:data>
+        </Direcciones>
+      </Direcciones>
+    </px:dataRow>
+  </px:data>
+</Empleado>
