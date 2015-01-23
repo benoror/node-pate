@@ -4,7 +4,7 @@ Pâté is a simple XPath-oriented, express-compatible template engine for Node.j
 
 # Installation
 
-    npm install node-pate --save
+    npm install node-pate
 
 # Dependencies
 
@@ -40,6 +40,7 @@ This software is still evolving. There are likely cases that it cannot handle, s
 
 # Limitations
 
+- No formatting eval (ex. formatCurrency, numberToWords, etc.)
 - No array support
 - No support for namespaces
 
