@@ -11,7 +11,7 @@ var libxmljs = require('libxmljs');
  */
 exports.parse = function parse(tpl, xml, xpath, callback) {
 
-	var xmlDoc
+	var xmlDoc;
 	try {
 		xmlDoc = libxmljs.parseXmlString(xml);
 	} catch (e) {
@@ -20,6 +20,7 @@ exports.parse = function parse(tpl, xml, xpath, callback) {
 
 	xmlDoc.root().find(xpath).forEach(function (el, index, arr) {
 
+		// Eval source: http://jsfiddle.net/hU7e2/1/
 		var new_tpl = tpl.toString().replace(/\{\{(.*?)\}\}/g, function (match, token) {
 
 			var splited = token.trim().split('/');
@@ -38,7 +39,7 @@ exports.parse = function parse(tpl, xml, xpath, callback) {
 
 	    callback(null, new_tpl);
 	});
-}
+};
 
 /**
  * Register engine for ExpressJS
