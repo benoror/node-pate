@@ -21,14 +21,22 @@ Dependencies [source](https://github.com/TooTallNate/node-gyp#installation):
 # Basic usage
 
     var pate = require('node-pate');
+    var formatter = require('./format_lib.js');
 
-	pate.parse('{{ count/@type }} count: {{ count }}', '<data><row><count type="Bretzel">42</count></row></data>', '/*/*', function (err, data) {
-		console.log(data);
+    var options = {
+        tpl: '{{ bread/@name }} price: $[[ formatMoney({{ bread/@price }}) ]] ([[ moneyToWords({{ bread/@price }}) ]])',
+        xml: '<data><row><bread name="Bretzel" price="42.56" /></row></data>',
+        xpath: '/*/*',
+        format_lib: formatter
+    };
+
+	pate.parse(options, function (err, data) {
+        console.log(data);
 	});
 
 Outputs:
 
-	Bretzel count: 42
+	Bretzel price: $42.56 (CUARENTA Y DOS PESOS CON 56/100)
 
 # Express example
 
@@ -40,7 +48,6 @@ This software is still evolving. There are likely cases that it cannot handle, s
 
 # Limitations
 
-- No formatting eval (ex. formatCurrency, numberToWords, etc.)
 - No array support
 - No support for namespaces
 

@@ -1,6 +1,9 @@
 var fs = require('fs');
 var libxmljs = require('libxmljs');
 
+global.pate = {};
+var rootEl;
+
 /**
  * Parse XPath template
  *
@@ -9,33 +12,39 @@ var libxmljs = require('libxmljs');
  * @param  {String}   xpath        XPath
  * @param  {Function} callback
  */
-exports.parse = function parse(tpl, xml, xpath, callback) {
-	var xmlDoc;
+exports.parse = function parse(options, callback) {
+	if (!options.tpl)
+		return callback({message: 'Error: Missing Template'})
+	if (!options.xml)
+		return callback({message: 'Error: Missing XML string'})
+	if (!options.xpath)
+		return callback({message: 'Error: Missing XPath string'})
+
+	global.pate.format_lib = options.format_lib;
 
 	try {
-		xmlDoc = libxmljs.parseXmlString(xml);
-		element = xmlDoc.root().get(xpath);
+		var xmlDoc = libxmljs.parseXmlString(options.xml);
+		rootEl = xmlDoc.root().get(options.xpath);
 	} catch (e) {
 		return callback(e);
 	}
 
-	var new_tpl = tpl.toString();
+	var new_tpl = options.tpl.toString();
 
-	// Eval source: http://jsfiddle.net/hU7e2/1/
-	new_tpl = new_tpl.replace(/\{\{(.*?)\}\}/g, matchFn); // XPath match
+	// XPath match
+	new_tpl = new_tpl.replace(/\{\{(.*?)\}\}/g, xpathFn);
+	// Eval match
+	new_tpl = new_tpl.replace(/\[\[(.*?)\]\]/g, evalFn);
 
 	callback(null, new_tpl);
 };
 
 /**
- * Match function
- * 
- * @param  {String} match
- * @param  {String} token
+ * XPatch matcher function
  */
-function matchFn(match, token) {
+function xpathFn(match, token) {
 	var splited = token.trim().split('/');
-	var retVal = element.get(splited[0]);
+	var retVal = rootEl.get(splited[0]);
 
 	if (splited.length < 2) {
 		retVal = retVal.text();
@@ -48,6 +57,25 @@ function matchFn(match, token) {
 }
 
 /**
+ * Eval matcher function
+ * Based on: http://www.sitepoint.com/call-javascript-function-string-without-using-eval/
+ */
+function evalFn(match, token) {
+	var splited = token.trim().split(/[\(\)]/g);
+
+	if(splited.length < 3)
+		return 'EVAL ERROR';
+
+	var fnstring = splited[0];
+	var fnparams = splited.slice(1, splited.length - 1);
+	var fn = global['pate']['format_lib'][splited[0]];
+
+	if (typeof fn === "function")
+		return fn.apply(null, fnparams);
+
+}
+
+/**
  * Register engine for ExpressJS
  *
  * @param  {String}   filename Template filename
@@ -55,16 +83,13 @@ function matchFn(match, token) {
  * @param  {Function} callback
  */
 exports.__express = function(filename, options, callback) {
-	if (!options.xml)
-		return callback({ message: 'Error: Missing XML string' });
-	if (!options.xpath)
-		return callback({ message: 'Error: Missing XPath string' });
-
-	fs.readFile(filename, function(err, tpl) {
+	fs.readFile(filename, 'utf8', function(err, tpl) {
 		if (err)
 			return callback(err);
 
-		parse(tpl, options.xml, options.xpath, function(err, data) {
+		options.tpl = tpl;
+
+		this.parse(options, function(err, data) {
 			if (err)
 				return callback(err);
 
