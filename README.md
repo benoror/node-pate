@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ![logo](https://raw.githubusercontent.com/benoror/node-pate/master/resources/logo.png)
+=======
+[!logo](https://raw.githubusercontent.com/benoror/node-pate/master/resources/logo.png)
+>>>>>>> origin/master
 
 # About
 
