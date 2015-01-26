@@ -31,7 +31,7 @@ describe("Pate", function() {
 		});
 	});
 
-	xit("should parse basic Templates and apply data based on XPath placeholders", function (done) {
+	it("should parse basic Templates and apply data based on XPath placeholders", function (done) {
 		fs.readFile('spec/fixtures/basic/data.xml', 'utf8', function(err, xml) {
 			fs.readFile('spec/fixtures/basic/template.txt', 'utf8', function(err, tpl) {
 				fs.readFile('spec/fixtures/basic/result.txt', 'utf8', function(err, result) {
