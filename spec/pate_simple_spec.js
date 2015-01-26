@@ -2,7 +2,7 @@
  * Pate Simple Jasmine tests
  */
 var fs = require('fs');
-var pate = require('../pate');
+var pate = require('..');
 
 describe("Pate", function() {
 

@@ -1,3 +1,5 @@
+![logo](https://raw.githubusercontent.com/benoror/node-pate/master/resources/logo.png)
+
 # About
 
 Pâté is a simple XPath-oriented, express-compatible template engine for Node.js
@@ -34,13 +36,40 @@ Dependencies [source](https://github.com/TooTallNate/node-gyp#installation):
         console.log(data);
 	});
 
-Outputs:
+Output:
 
 	Bretzel price: $42.56 (CUARENTA Y DOS PESOS CON 56/100)
 
 # Express example
 
-WIP
+Application:
+
+    var express = require('express');
+    var app = express();
+    var router = express.Router();
+
+    var pate = require('node-pate');
+    var formatter = require('./format_lib.js')
+
+    // view engine setup
+    app.engine('html', pate.__express);
+    app.set('views', path.join(__dirname, 'views'));
+
+    ...
+
+    router.get('/test', function(req, res, next) {
+      res.render('templates/test.html', {
+        xml: '<data><row><bread name="Bretzel" price="42.56" /></row></data>',
+        xpath: '/*/*',
+        format_lib: formatter
+      });
+    });
+
+Test:
+
+    cd test-express && node bin/www
+
+Go to: http://localhost:3000/test
 
 # Status
 

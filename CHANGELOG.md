@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 0.0.3
+
+- Express view engine support
+
 ## 0.0.2
 
 - Support for formatting via 'format_lib' option

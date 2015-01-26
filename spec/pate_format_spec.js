@@ -2,7 +2,7 @@
  * Pate Formatting Jasmine tests
  */
 var fs = require('fs');
-var pate = require('../pate');
+var pate = require('..');
 var formatter = require('./fixtures/format_lib.js');
 
 describe("Pate Formatting", function() {
