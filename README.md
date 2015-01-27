@@ -1,8 +1,14 @@
 ![logo](https://raw.githubusercontent.com/benoror/node-pate/master/resources/logo.png)
 
-# About
+# About Pâté
 
-Pâté is a simple XPath-oriented, express-compatible template engine for Node.js
+Pate (/ˈpæteɪ/) is a simple XPath-oriented, express-compatible template engine for Node.js
+
+# Features
+
+- Support for simple XPath selectors
+- Formatting via external lib
+- Compatible with Express view engine
 
 # Installation
 
@@ -12,7 +18,7 @@ Pâté is a simple XPath-oriented, express-compatible template engine for Node.j
 
 Pâté depends on [libxmljs](https://github.com/polotek/libxmljs), thus compilation is needed via [node-gyp](https://github.com/TooTallNate/node-gyp)
 
-Dependencies [source](https://github.com/TooTallNate/node-gyp#installation):
+Dependencies ([more info](https://github.com/TooTallNate/node-gyp#installation)):
 - **Python**
     - Unix: Python v2.7
     - Windows: [v2.7.3](http://www.python.org/download/releases/2.7.3#download)
@@ -22,12 +28,30 @@ Dependencies [source](https://github.com/TooTallNate/node-gyp#installation):
 
 # Basic usage
 
+**data.xml**:
+
+    <data>
+        <row>
+            <bread price="42.56">
+                <name>Bretzel</name>
+            </bread>
+        </row>
+    </data>
+
+**tpl.txt**:
+
+    {{ bread/name }} price: $[[ formatMoney({{ bread/@price }}) ]]
+    ([[ moneyToWords({{ bread/@price }}) ]])
+
+**parse.js**:
+
+    var fs = require('fs');
     var pate = require('node-pate');
     var formatter = require('./format_lib.js');
 
     var options = {
-        tpl: '{{ bread/@name }} price: $[[ formatMoney({{ bread/@price }}) ]] ([[ moneyToWords({{ bread/@price }}) ]])',
-        xml: '<data><row><bread name="Bretzel" price="42.56" /></row></data>',
+        tpl: fs.readFileSync('tpl.txt'),
+        xml: fs.readFileSync('data.xml'),
         xpath: '/*/*',
         format_lib: formatter
     };
@@ -36,9 +60,10 @@ Dependencies [source](https://github.com/TooTallNate/node-gyp#installation):
         console.log(data);
 	});
 
-Output:
+**Output**:
 
-	Bretzel price: $42.56 (CUARENTA Y DOS PESOS CON 56/100)
+	Bretzel price: $42.56
+    (CUARENTA Y DOS PESOS CON 56/100)
 
 # Express example
 
@@ -69,7 +94,7 @@ Test:
 
     cd test-express && node bin/www
 
-Go to: http://localhost:3000/test
+Go to: <http://localhost:3000/test>
 
 # Status
 
@@ -77,8 +102,9 @@ This software is still evolving. There are likely cases that it cannot handle, s
 
 # Limitations
 
-- No array support
+- No array iteration support
 - No support for namespaces
+- Ugly logo ):
 
 # Inspirations
 
