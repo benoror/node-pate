@@ -78,4 +78,31 @@ describe("Pate", function() {
 			});
 		});
 	});
+
+	it("should support XML Namespaces", function (done) {
+		pate.parse({
+			tpl: 'ROW ID: {{ @id }}',
+			xml: [
+				'<?xml version="1.0" encoding="UTF-8"?>',
+				'<entity xmlns:px="urn:panax">',
+					'<px:other>',
+					'</px:other>',
+					'<px:data>',
+						'<px:row id="666">',
+						'</px:row>',
+					'</px:data>',
+				'</entity>'
+			].join(''),
+			xpath:  '/entity/px:data/px:row',
+			ns: {
+				px: 'urn:panax'
+			}
+		}, function (err, data) {
+			expect(err).toBeFalsy();
+			if(!err) {
+				expect(data).toEqual("ROW ID: 666");
+			}
+			done();
+		});
+	});
 });

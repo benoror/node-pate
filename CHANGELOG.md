@@ -1,8 +1,14 @@
 # CHANGELOG
 
+## 0.0.5
+
+- Namespace support
+- Bug fix: Not-found XPath returns empty string
+- README.md: Gif screencast
+
 ## 0.0.4
 
-- Bux fix: Multi-level XPath selectors
+- Bug fix: Multi-level XPath selectors
 
 ## 0.0.3
 

@@ -2,7 +2,7 @@
 
 # About Pâté
 
-Pate (/ˈpæteɪ/) is a simple XPath-oriented, express-compatible template engine for Node.js
+Pâté (/ˈpæteɪ/) is a simple XPath-oriented, express-compatible template engine for Node.js
 
 # Features
 
@@ -28,42 +28,7 @@ Dependencies ([more info](https://github.com/TooTallNate/node-gyp#installation))
 
 # Basic usage
 
-**data.xml**:
-
-    <data>
-        <row>
-            <bread price="42.56">
-                <name>Bretzel</name>
-            </bread>
-        </row>
-    </data>
-
-**tpl.txt**:
-
-    {{ bread/name }} price: $[[ formatMoney({{ bread/@price }}) ]]
-    ([[ moneyToWords({{ bread/@price }}) ]])
-
-**parse.js**:
-
-    var fs = require('fs');
-    var pate = require('node-pate');
-    var formatter = require('./format_lib.js');
-
-    var options = {
-        tpl: fs.readFileSync('tpl.txt'),
-        xml: fs.readFileSync('data.xml'),
-        xpath: '/*/*',
-        format_lib: formatter
-    };
-
-	pate.parse(options, function (err, data) {
-        console.log(data);
-	});
-
-**Output**:
-
-	Bretzel price: $42.56
-    (CUARENTA Y DOS PESOS CON 56/100)
+![gifcast](https://raw.githubusercontent.com/benoror/node-pate/master/resources/node-pate-0.0.5.gif)
 
 # Express example
 
@@ -96,6 +61,14 @@ Test:
 
 Go to: <http://localhost:3000/test>
 
+# Namespaces
+
+To use a namespace put it inside the options object in the form:
+
+    ns: {
+        prefix: 'URI'
+    }
+
 # Status
 
 This software is still evolving. There are likely cases that it cannot handle, so file a feature request in github if there is something you think it should do.
@@ -103,7 +76,6 @@ This software is still evolving. There are likely cases that it cannot handle, s
 # Limitations
 
 - No array iteration support
-- No support for namespaces
 - Ugly logo ):
 
 # Inspirations
