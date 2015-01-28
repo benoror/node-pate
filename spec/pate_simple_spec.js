@@ -31,6 +31,34 @@ describe("Pate", function() {
 		});
 	});
 
+	it("should return empty-string on not-found paths", function (done) {
+		pate.parse({
+			tpl: 'ROW ID: {{ @id }} -- Object: {{ object }} -- Bread: {{ bread/@type }} (count: {{ bread/count }} {{ bread/count/@unit }})',
+			xml: '<data><row></row></data>',
+			xpath:  '/*/*',
+		}, function (err, data) {
+			expect(err).toBeFalsy();
+			if(!err) {
+				expect(data).toEqual("ROW ID:  -- Object:  -- Bread:  (count:  )");
+			}
+			done();
+		});
+	});
+
+	// it("should return empty-string on not-found main XPath", function (done) {
+	// 	pate.parse({
+	// 		tpl: 'ROW ID: {{ @id }} -- Object: {{ object }} -- Bread: {{ bread/@type }} (count: {{ bread/count }} {{ bread/count/@unit }})',
+	// 		xml: '',
+	// 		xpath:  '/*/*',
+	// 	}, function (err, data) {
+	// 		expect(err).toBeFalsy();
+	// 		if(!err) {
+	// 			expect(data).toEqual("ROW ID:  -- Object:  -- Bread:  (count:  )");
+	// 		}
+	// 		done();
+	// 	});
+	// });
+
 	it("should parse basic Templates and apply data based on XPath placeholders", function (done) {
 		fs.readFile('spec/fixtures/basic/data.xml', 'utf8', function(err, xml) {
 			fs.readFile('spec/fixtures/basic/template.txt', 'utf8', function(err, tpl) {
