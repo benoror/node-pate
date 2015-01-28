@@ -1,6 +1,10 @@
 # CHANGELOG
 
-### 0.0.3
+## 0.0.4
+
+- Bux fix: Multi-level XPath selectors
+
+## 0.0.3
 
 - Express view engine support
 

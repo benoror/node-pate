@@ -1,6 +1,6 @@
 {
   "name": "node-pate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple XPath-oriented, Express-compatible Template Engine",
   "main": "app.js",
   "scripts": {

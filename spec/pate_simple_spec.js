@@ -19,13 +19,13 @@ describe("Pate", function() {
 
 	it("should parse simple Template", function (done) {
 		pate.parse({
-			tpl: '{{ count/@type }} count: {{ count }}',
-			xml: '<data><row><count type="Bretzel">42</count></row></data>',
+			tpl: 'ROW ID: {{ @id }} -- Object: {{ object }} -- Bread: {{ bread/@type }} (count: {{ bread/count }} {{ bread/count/@unit }})',
+			xml: '<data><row id="28"><object>Knife</object><bread type="Bretzel"><count unit="pc">42</count></bread></row></data>',
 			xpath:  '/*/*',
 		}, function (err, data) {
 			expect(err).toBeFalsy();
 			if(!err) {
-				expect(data).toEqual("Bretzel count: 42");
+				expect(data).toEqual("ROW ID: 28 -- Object: Knife -- Bread: Bretzel (count: 42 pc)");
 			}
 			done();
 		});
