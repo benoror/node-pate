@@ -80,7 +80,9 @@ This software is still evolving. There are likely cases that it cannot handle, s
 
 # Inspirations
 
-https://github.com/dnewcome/jath
+- https://github.com/twitter/hogan.js
+- http://mustache.github.io/
+- https://github.com/dnewcome/jath
 
 # License
 
