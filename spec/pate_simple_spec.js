@@ -45,19 +45,17 @@ describe("Pate", function() {
 		});
 	});
 
-	// it("should return empty-string on not-found main XPath", function (done) {
-	// 	pate.parse({
-	// 		tpl: 'ROW ID: {{ @id }} -- Object: {{ object }} -- Bread: {{ bread/@type }} (count: {{ bread/count }} {{ bread/count/@unit }})',
-	// 		xml: '',
-	// 		xpath:  '/*/*',
-	// 	}, function (err, data) {
-	// 		expect(err).toBeFalsy();
-	// 		if(!err) {
-	// 			expect(data).toEqual("ROW ID:  -- Object:  -- Bread:  (count:  )");
-	// 		}
-	// 		done();
-	// 	});
-	// });
+	it("should return Error on not-found main XPath", function (done) {
+		pate.parse({
+			tpl: ' - ',
+			xml: '<data><row></row></data>',
+			xpath:  '/data/row/ghost',
+		}, function (err, data) {
+			expect(err).toBeFalsy();
+			expect(data).toEqual(' - ');
+			done();
+		});
+	});
 
 	it("should parse basic Templates and apply data based on XPath placeholders", function (done) {
 		fs.readFile('spec/fixtures/basic/data.xml', 'utf8', function(err, xml) {

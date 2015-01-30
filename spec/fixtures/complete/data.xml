@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Entity>
+<entity xmlns:px="urn:panax">
   <px:data>
     <px:dataRow rowNumber="1">
       <object>Knife</object>
@@ -8,4 +8,4 @@
       </bread>
     </px:dataRow>
   </px:data>
-</Entity>
+</entity>

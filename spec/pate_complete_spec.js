@@ -14,7 +14,10 @@ describe("Pate", function() {
 					pate.parse({
 						tpl: tpl,
 						xml: xml,
-						xpath: '/*/*/*',
+						xpath: '/entity/px:data/px:dataRow',
+						ns: {
+							px: 'urn:panax'
+						},
 						format_lib: formatter
 					}, function (err, data) {
 						expect(err).toBeFalsy();
