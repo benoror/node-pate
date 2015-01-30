@@ -1,0 +1,6 @@
+ROW NUM: 1
+	Object: Knife
+	Bread: Bretzel
+		price: $42.00 MXN
+		price in words: "CUARENTA Y DOS PESOS "
+		not-found: ""

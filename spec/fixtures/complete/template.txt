@@ -1,0 +1,6 @@
+ROW NUM: {{   @rowNumber   }}
+	Object: {{ object }}
+	Bread: {{ bread/@type }}
+		price: ${{ formatMoney(bread/price) }} {{ bread/price/@currency }}
+		price in words: "{{ moneyToWords(bread/price) }}"
+		not-found: "{{ ghost(not/hing) }}{{ not/hing }}"

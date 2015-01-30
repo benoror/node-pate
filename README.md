@@ -28,7 +28,7 @@ Dependencies ([more info](https://github.com/TooTallNate/node-gyp#installation))
 
 # Basic usage
 
-![gifcast](https://raw.githubusercontent.com/benoror/node-pate/master/resources/node-pate-0.0.5.gif)
+![gifcast](https://raw.githubusercontent.com/benoror/node-pate/master/resources/node-pate-0.0.6.gif)
 
 # Express example
 

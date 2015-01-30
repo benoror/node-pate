@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <px:data>
+    <px:dataRow rowNumber="1">
+      <object>Knife</object>
+      <bread type="Bretzel">
+        <price currency="MXN">42</price>
+      </bread>
+    </px:dataRow>
+  </px:data>
+</Entity>

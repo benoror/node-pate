@@ -1231,7 +1231,7 @@ EXCEL -->
   <td colspan=2 rowspan=2 height=40 class=xl6621856 width=161 style='height:
   30.0pt;width:121pt'>AMOUNT:</td>
   <td colspan=4 class=xl9321856 width=471 style='width:352pt'><span
-  style='mso-spacerun:yes'> </span>[[formatMoney({{Monto/@value}})]]<span
+  style='mso-spacerun:yes'> </span>{{ formatMoney(Monto/@value) }}<span
   style='mso-spacerun:yes'> </span></td>
   <td class=xl6721856 width=42 style='width:32pt'></td>
   <td class=xl7921856 width=94 style='width:70pt'>&nbsp;</td>
@@ -1240,7 +1240,7 @@ EXCEL -->
  </tr>
  <tr height=18 style='height:13.2pt'>
   <td colspan=4 rowspan=2 height=36 class=xl9421856 width=471 style='border-bottom:
-  1.0pt solid black;height:27.0pt;width:352pt'>[[moneyToWords({{Monto/@value}})]]</td>
+  1.0pt solid black;height:27.0pt;width:352pt'>{{ moneyToWords(Monto/@value) }}</td>
   <td class=xl9521856 width=42 style='width:32pt'></td>
   <td class=xl7921856 width=94 style='width:70pt'>&nbsp;</td>
   <td class=xl6721856 width=94 style='width:70pt'></td>

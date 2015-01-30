@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.0.6
+
+- Dropped "[[" & "]]" (basic function parsing)
+- "Complete" spec to test all features in a single use-case
+
 ## 0.0.5
 
 - Namespace support
