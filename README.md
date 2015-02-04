@@ -1,8 +1,10 @@
 ![logo](https://raw.githubusercontent.com/benoror/node-pate/master/resources/logo.png)
 
+[![NPM](https://nodei.co/npm/node-pate.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-pate/)
+
 # About Pâté
 
-Pâté (/ˈpæteɪ/) is a simple XPath-oriented, express-compatible template engine for Node.js
+Pâté (/ˈpæteɪ/) is an XPath templete engine for Node.js, also compatible with Express framework
 
 # Features
 
