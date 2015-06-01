@@ -4,6 +4,8 @@
 
 # About Pâté
 
+[![Join the chat at https://gitter.im/benoror/node-pate](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/benoror/node-pate?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Pâté (/ˈpæteɪ/) is an XPath templete engine for Node.js, also compatible with Express framework
 
 # Features
